@@ -3,7 +3,7 @@ import Stripe from 'stripe';
 
 export async function POST() {
   const secretKey = process.env.STRIPE_SECRET_KEY;
-  if (!secretKey) return NextResponse.json({ error: 'Falta la llave de Stripe' }, { status: 500 });
+  if (!secretKey) return NextResponse.json({ error: 'Configuración incompleta: falta la llave de Stripe.' }, { status: 500 });
   
   const stripe = new Stripe(secretKey);
   try {
@@ -16,6 +16,7 @@ export async function POST() {
     });
     return NextResponse.json({ url: session.url });
   } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error("STRIPE_ERROR_DETAIL:", error.message, error.type, error.code);
+    return NextResponse.json({ error: `Fallo de Stripe: ${error.message}` }, { status: 500 });
   }
 }
