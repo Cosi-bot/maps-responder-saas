@@ -1,24 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  Sparkles, 
-  CheckCircle2, 
-  Rocket, 
-  ExternalLink, 
-  Zap, 
-  MousePointer2, 
-  ShieldCheck, 
-  TrendingUp, 
-  RefreshCcw,
-  Star,
-  ShieldAlert,
-  Bot,
-  Monitor,
-  Users,
-  Target,
-  Globe
-} from "lucide-react";
+import { Sparkles, CheckCircle2, Rocket, ExternalLink, Zap, MousePointer2, ShieldCheck, TrendingUp, RefreshCcw, Star, ShieldAlert, Bot, Monitor, Users, Target, Globe } from "lucide-react";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -54,10 +37,8 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="max-w-7xl mx-auto px-8 h-24 flex items-center justify-between border-b border-white/5 backdrop-blur-xl sticky top-0 z-50">
-         <div className="text-2xl font-black tracking-tighter group cursor-pointer flex items-center gap-2">
-            <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-black shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-               <Bot className="w-5 h-5" />
-            </div>
+         <div className="text-2xl font-black tracking-tighter group cursor-pointer flex items-center gap-3">
+            <img src="/logo.svg" alt="Cosi" className="w-8 h-8" />
             <span>MAPS<span className="text-emerald-500">_RESPONDER</span></span>
          </div>
          <div className="hidden md:flex gap-10 items-center text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500 font-sans">
@@ -95,9 +76,9 @@ export default function Home() {
                <button 
                   disabled={loading}
                   onClick={handleSubscribe}
-                  className="group bg-white text-black px-16 py-8 rounded-[36px] font-black uppercase text-base tracking-[0.15em] shadow-[0_20px_80px_rgba(255,255,255,0.15)] hover:bg-emerald-400 hover:scale-105 transition-all active:scale-95 flex items-center gap-4 cursor-pointer"
+                  className="group bg-white text-black px-16 py-8 rounded-[36px] font-black uppercase text-base tracking-[0.15em] shadow-[0_20px_60px_rgba(255,255,255,0.15)] hover:bg-emerald-400 hover:scale-105 transition-all active:scale-95 flex items-center gap-4 cursor-pointer"
                >
-                  {loading ? <RefreshCcw className="w-6 h-6 animate-spin" /> : <Rocket className="w-6 h-6" />}
+                  {loading ? <RefreshCcw className="w-6 h-6 animate-spin text-black" /> : <Rocket className="w-6 h-6" />}
                   Get Started — $20/mo
                </button>
                <button onClick={() => scrollTo('demo')} className="text-zinc-600 hover:text-white font-black uppercase text-[12px] tracking-[0.3em] flex items-center gap-3 transition-all border-b border-transparent hover:border-zinc-800 pb-2 cursor-pointer">
@@ -165,7 +146,7 @@ export default function Home() {
                    </div>
                 </div>
                 <div className="relative group">
-                   <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                   <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-10 transition-opacity" />
                    <div className="bg-zinc-900 border border-zinc-800 rounded-[64px] p-12 relative z-10 shadow-2xl border-t-zinc-700/50 overflow-hidden">
                       <div className="absolute top-0 right-0 p-8 opacity-5">
                          <Target className="w-40 h-40" />
@@ -217,7 +198,7 @@ export default function Home() {
           <div id="pricing" className="text-center pt-20">
              <h2 className="text-5xl font-black tracking-tighter mb-16 uppercase italic font-sans text-white text-center">Simple Pricing. <span className="text-zinc-500 text-4xl">No Hidden Fees.</span></h2>
              <div className="max-w-md mx-auto bg-white text-black p-12 rounded-[56px] shadow-[0_40px_100px_rgba(255,255,255,0.1)] relative overflow-hidden group border border-white/20">
-                <div className="absolute top-0 right-0 bg-black text-white px-8 py-3 rounded-bl-[32px] font-black text-[11px] uppercase tracking-[0.2em] shadow-2xl">Standard</div>
+                <div className="absolute top-0 right-0 bg-black text-white px-8 py-3 rounded-bl-[32px] font-black text-[11px] uppercase tracking-widest font-sans shadow-2xl">Standard</div>
                 <div className="text-zinc-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 font-sans text-center">Professional Plan</div>
                 <div className="flex items-center justify-center gap-1 mb-8">
                    <span className="text-3xl font-black">$</span>
