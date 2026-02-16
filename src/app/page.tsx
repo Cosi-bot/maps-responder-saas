@@ -14,10 +14,7 @@ import {
   Star,
   ShieldAlert,
   Bot,
-  ArrowRight,
-  Shield,
-  Clock,
-  Code
+  Monitor
 } from "lucide-react";
 
 export default function Home() {
@@ -97,7 +94,7 @@ export default function Home() {
                   onClick={handleSubscribe}
                   className="group bg-white text-black px-16 py-8 rounded-[36px] font-black uppercase text-base tracking-[0.15em] shadow-[0_20px_80px_rgba(255,255,255,0.1)] hover:bg-emerald-400 hover:scale-105 transition-all active:scale-95 flex items-center gap-4 cursor-pointer"
                >
-                  {loading ? <RefreshCcw className="w-6 h-6 animate-spin" /> : <Rocket className="w-5 h-5" />}
+                  {loading ? <RefreshCcw className="w-6 h-6 animate-spin" /> : <Rocket className="w-6 h-6" />}
                   Activar Plan — $20/mes
                </button>
                <button onClick={() => scrollTo('demo')} className="text-zinc-600 hover:text-white font-black uppercase text-[12px] tracking-[0.3em] flex items-center gap-3 transition-all border-b border-transparent hover:border-zinc-800 pb-2 cursor-pointer">
@@ -133,7 +130,7 @@ export default function Home() {
           </div>
 
           {/* Demo Section */}
-          <div id="demo" className="mb-40 pt-20">
+          <div id="demo" className="mb-40 pt-20 text-center">
              <div className="max-w-4xl mx-auto bg-zinc-900/40 border border-zinc-800 rounded-[56px] p-12 md:p-20 shadow-[0_40px_100px_rgba(0,0,0,1)] relative overflow-hidden border-t-zinc-700/30">
                 <div className="flex items-center gap-3 text-emerald-400 mb-12 font-black uppercase tracking-[0.4em] text-[10px] justify-center">
                    <Monitor className="w-4 h-4" /> <span>Demostración en Tiempo Real</span>
@@ -141,12 +138,12 @@ export default function Home() {
                 
                 <div className="space-y-10">
                    <div className="flex gap-6 items-start">
-                      <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-lg shrink-0 border border-zinc-700">👤</div>
+                      <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-lg shrink-0 border border-zinc-700 font-sans">👤</div>
                       <div className="bg-zinc-800/50 p-6 rounded-3xl rounded-tl-none border border-zinc-800 flex-1 text-left">
                          <div className="flex gap-1 mb-2">
                             {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 text-yellow-500 fill-current" />)}
                          </div>
-                         <p className="text-zinc-300 font-medium leading-relaxed italic text-sm">"La comida estuvo increíble, pero el café llegó un poco frío. Volveré seguro!"</p>
+                         <p className="text-zinc-300 font-medium leading-relaxed italic text-sm font-sans">"La comida estuvo increíble, pero el café llegó un poco frío. Volveré seguro!"</p>
                       </div>
                    </div>
 
@@ -155,21 +152,21 @@ export default function Home() {
                          <Bot className="w-6 h-6 text-emerald-400" />
                       </div>
                       <div className="bg-emerald-500/5 p-6 rounded-3xl rounded-tr-none border border-emerald-500/20 flex-1 text-right relative">
-                         <div className="absolute -top-3 right-6 bg-emerald-500 text-black text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest">Respuesta de IA</div>
-                         <p className="text-emerald-50/90 font-medium leading-relaxed text-sm">"¡Hola! Muchas gracias por tu visita y tus amables palabras. Lamentamos lo del café; la próxima vez avísanos y te lo cambiaremos al instante. ¡Esperamos verte pronto!"</p>
+                         <div className="absolute -top-3 right-6 bg-emerald-500 text-black text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest font-sans">Respuesta de IA</div>
+                         <p className="text-emerald-50/90 font-medium leading-relaxed text-sm font-sans">"¡Hola! Muchas gracias por tu visita y tus amables palabras. Lamentamos lo del café; la próxima vez avísanos y te lo cambiaremos al instante. ¡Esperamos verte pronto!"</p>
                       </div>
                    </div>
                 </div>
              </div>
           </div>
 
-          <div id="seguridad" className="bg-[#050505] border border-zinc-900 rounded-[56px] p-16 flex flex-col md:flex-row items-center gap-12 shadow-inner mb-40 pt-20">
+          <div id="seguridad" className="bg-[#050505] border border-zinc-900 rounded-[56px] p-16 flex flex-col md:flex-row items-center gap-12 shadow-inner mb-40 pt-20 text-center md:text-left">
              <div className="w-20 h-20 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 shrink-0">
                 <ShieldAlert className="w-10 h-10" />
              </div>
              <div>
-                <h4 className="text-white font-black uppercase tracking-[0.3em] text-sm mb-4">Seguridad v8.7 de Grado Militar</h4>
-                <p className="text-zinc-500 text-lg leading-relaxed font-medium max-w-2xl">
+                <h4 className="text-white font-black uppercase tracking-[0.3em] text-sm mb-4 font-sans text-center md:text-left">Seguridad v8.7 de Grado Militar</h4>
+                <p className="text-zinc-500 text-lg leading-relaxed font-medium max-w-2xl font-sans">
                    Nunca te pediremos tus contraseñas. La conexión se realiza a través de un puente seguro verificado por Google (OAuth 2.0), dándote el control total para activar o desactivar el bot en cualquier momento desde tu cuenta.
                 </p>
              </div>
@@ -177,14 +174,14 @@ export default function Home() {
 
           {/* Pricing Section */}
           <div id="precios" className="text-center pt-20">
-             <h2 className="text-5xl font-black tracking-tighter mb-16 uppercase italic">Un solo plan. <span className="text-zinc-500">Sin trucos.</span></h2>
+             <h2 className="text-5xl font-black tracking-tighter mb-16 uppercase italic font-sans text-white text-center">Un solo plan. <span className="text-zinc-500">Sin trucos.</span></h2>
              <div className="max-w-md mx-auto bg-white text-black p-12 rounded-[56px] shadow-[0_40px_100px_rgba(255,255,255,0.1)] relative overflow-hidden group">
-                <div className="absolute top-0 right-0 bg-black text-white px-6 py-2 rounded-bl-3xl font-black text-[10px] uppercase tracking-widest">Popular</div>
-                <div className="text-zinc-500 font-black uppercase tracking-[0.3em] text-[10px] mb-8">Plan Profesional</div>
+                <div className="absolute top-0 right-0 bg-black text-white px-6 py-2 rounded-bl-3xl font-black text-[10px] uppercase tracking-widest font-sans">Popular</div>
+                <div className="text-zinc-500 font-black uppercase tracking-[0.3em] text-[10px] mb-8 font-sans text-center">Plan Profesional</div>
                 <div className="flex items-center justify-center gap-1 mb-8">
                    <span className="text-3xl font-black">$</span>
                    <span className="text-8xl font-black tracking-tighter">20</span>
-                   <span className="text-xl font-bold text-zinc-400">/mes</span>
+                   <span className="text-xl font-bold text-zinc-400 font-sans">/mes</span>
                 </div>
                 <ul className="text-left space-y-6 mb-12">
                    {[
@@ -193,14 +190,14 @@ export default function Home() {
                      "Soporte 24/7",
                      "Personalidad de Marca"
                    ].map(item => (
-                     <li key={item} className="flex items-center gap-4 font-bold text-sm">
+                     <li key={item} className="flex items-center gap-4 font-bold text-sm font-sans">
                         <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
                      </li>
                    ))}
                 </ul>
                 <button 
                   onClick={handleSubscribe}
-                  className="w-full bg-black text-white py-6 rounded-3xl font-black uppercase tracking-widest hover:scale-105 transition-all shadow-2xl active:scale-95 cursor-pointer"
+                  className="w-full bg-black text-white py-6 rounded-3xl font-black uppercase tracking-widest hover:scale-105 transition-all shadow-2xl active:scale-95 cursor-pointer font-sans"
                 >
                    Activar Ahora
                 </button>
@@ -211,9 +208,9 @@ export default function Home() {
       </main>
 
       <footer className="max-w-7xl mx-auto px-8 py-24 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
-         <div className="text-[11px] font-black uppercase tracking-[0.6em] text-zinc-800">© 2026 MAPS_RESPONDER.AI // OPENCLAW OS</div>
+         <div className="text-[11px] font-black uppercase tracking-[0.6em] text-zinc-800 font-sans">© 2026 MAPS_RESPONDER.AI // OPENCLAW OS</div>
          <div className="flex gap-12">
-            <div className="flex items-center gap-3 text-zinc-700 font-bold uppercase text-[10px] tracking-widest">
+            <div className="flex items-center gap-3 text-zinc-700 font-bold uppercase text-[10px] tracking-widest font-sans">
                <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_12px_#10b981]" />
                Red en Línea
             </div>
