@@ -38,7 +38,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="max-w-7xl mx-auto px-8 h-24 flex items-center justify-between border-b border-white/5 backdrop-blur-md sticky top-0 z-50">
          <div className="text-2xl font-black tracking-tighter group cursor-pointer flex items-center gap-3">
-            <img src="/logo.png" alt="Cosi" className="w-12 h-12 object-contain filter drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]" />
+            <img src="/logo.png" alt="Cosi" className="w-24 h-24 object-contain filter drop-shadow-[0_0_12px_rgba(57,255,20,0.6)]" />
             <span>MAPS<span className="text-emerald-500 group-hover:animate-pulse">_RESPONDER</span></span>
          </div>
          <div className="hidden md:flex gap-10 items-center text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500 font-sans">
